@@ -1,4 +1,90 @@
----
----
+--- --- @import "hamilton/main";
 
-@import "hamilton/main";
+/* --- Custom Project Showcase Styles --- */
+
+/* 为每个项目创建一个卡片式容器 */
+.project-card {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 创建一个响应式的两栏布局 (Flexbox) */
+.project-layout {
+    display: flex;
+    gap: 2rem;
+    /* 两栏之间的间距 */
+    flex-wrap: wrap;
+    /* 在小屏幕上允许换行 */
+}
+
+/* 媒体内容栏 (左侧) */
+.project-media {
+    flex: 1;
+    /* 占据可用空间的一份 */
+    min-width: 300px;
+    /* 最小宽度，防止被过度挤压 */
+}
+
+.project-media img,
+.project-media video {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* 项目详情栏 (右侧) */
+.project-details {
+    flex: 1.5;
+    /* 占据可用空间的一份半，比媒体栏更宽 */
+    min-width: 300px;
+}
+
+.project-details h3 {
+    margin-top: 0;
+}
+
+.project-tech {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* 风格化的GitHub按钮 */
+.project-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background-color: #24292e;
+    /* GitHub 黑色 */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.project-button:hover {
+    background-color: #4a525a;
+    color: #ffffff;
+}
+
+/* 对小屏幕设备的响应式调整 */
+@media (max-width: 768px) {
+    .project-layout {
+        flex-direction: column;
+        /* 将两栏布局变为单栏堆叠 */
+    }
+}
