@@ -2,106 +2,79 @@
 ---
 @import "hamilton/main";
 
-/* --- Custom Project Showcase Styles --- */
-
-/* 为每个项目创建一个卡片式容器 */
-.project-card {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #fdfdfd;
-    transition: box-shadow 0.3s ease-in-out;
+/* 每个项目的容器，使用Flexbox实现经典的左媒体、右描述布局 */
+.project-entry {
+  display: flex;
+  flex-direction: row; /* 确保是水平排列 */
+  gap: 1.75rem;      /* 媒体和描述之间的间距 */
+  margin-bottom: 2rem; /* 每个项目之间的垂直间距 */
+  padding-bottom: 2rem; /* 每个项目底部的内边距 */
+  border-bottom: 1px solid #eee; /* 项目之间的分割线 */
 }
 
-.project-card:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+/* 左侧媒体容器: 固定宽度，以保持列表对齐整齐 */
+.project-entry-media {
+  flex: 0 0 220px; /* 固定宽度为220px，不拉伸也不收缩 */
+  height: fit-content; /* 高度自适应内容 */
 }
 
-/* 创建一个响应式的两栏布局 (Flexbox) */
-.project-layout {
-    display: flex;
-    gap: 2rem;
-    /* 两栏之间的间距 */
-    flex-wrap: wrap;
-    /* 在小屏幕上允许换行 */
-}
-
-/* 媒体内容栏 (左侧) */
-.project-media {
-    flex: 1;
-    /* 占据可用空间的一份 */
-    min-width: 300px;
-    /* 最小宽度，防止被过度挤压 */
-}
-
-.project-media img,
-.project-media video {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-}
-
-/* 项目详情栏 (右侧) */
-.project-details {
-    flex: 1.5;
-    /* 占据可用空间的一份半，比媒体栏更宽 */
-    min-width: 300px;
-}
-
-.project-details h3 {
-    margin-top: 0;
-}
-
-.project-tech {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f0f0f0;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9em;
-    color: #333;
-}
-
-/* 风格化的GitHub按钮 */
-.project-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: #24292e;
-    /* GitHub 黑色 */
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-}
-
-.project-button:hover {
-    background-color: #4a525a;
-    color: #ffffff;
-}
-
-/* 对小屏幕设备的响应式调整 */
-@media (max-width: 768px) {
-    .project-layout {
-        flex-direction: column;
-        /* 将两栏布局变为单栏堆叠 */
-    }
-}
-
-.project-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-  gap: 1rem; /* Space between images */
-  margin-top: 1rem;
-}
-
-.project-images-grid img {
+.project-entry-media img,
+.project-entry-media video {
   width: 100%;
   height: auto;
   border-radius: 6px;
   border: 1px solid #ddd;
-  object-fit: cover; /* Ensures images fill their space nicely */
+}
+
+/* 右侧描述容器: 占据所有剩余空间 */
+.project-entry-details {
+  flex: 1;
+}
+
+.project-entry-details h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.4em;
+}
+
+/* 标题中的链接样式 */
+.project-entry-details h3 a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2a2a2a; /* 标题颜色 */
+}
+.project-entry-details h3 a:hover {
+  color: #0056b3; /* 鼠标悬停时颜色 */
+  text-decoration: underline;
+}
+
+/* 技术栈和日期的元信息行 */
+.project-meta {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.project-meta span {
+    margin-right: 1.5rem;
+}
+
+/* 项目描述要点 */
+.project-entry-details ul {
+  margin-left: 1.2rem;
+  padding-left: 0;
+  font-size: 0.95em;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 屏幕宽度小于768px时的响应式调整 */
+@media (max-width: 768px) {
+  .project-entry {
+    flex-direction: column; /* 垂直堆叠 */
+  }
+  .project-entry-media {
+    flex-basis: auto;
+    max-width: 350px; /* 在移动端限制媒体最大宽度 */
+    margin-bottom: 1rem;
+  }
 }
