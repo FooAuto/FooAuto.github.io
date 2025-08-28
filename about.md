@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Another minimal style of Jekyll theme for writers.
+I am an undergraduate student in Computer Science and Technology at Tongji University, on track to graduate in June 2026. 

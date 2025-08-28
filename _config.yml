@@ -1,8 +1,9 @@
-title: Hamilton
-description: A minimal and beautiful Jekyll theme best for writing and note-taking.
-author: Shangzhi Huang
+title: Ruihao Xi
+description: An undergraduate student in Computer Science and Technology at Tongji University.
+author: Ruihao Xi
 avatar: /logo.png
-email: ngzhio@gmail.com
+email: AlbertXiruihao@outlook.com
+url: https://fooauto.github.io/
 
 plugins:
   - jekyll-seo-tag
