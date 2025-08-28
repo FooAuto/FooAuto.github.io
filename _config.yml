@@ -4,6 +4,7 @@ author: Ruihao Xi
 avatar: /logo.png
 email: AlbertXiruihao@outlook.com
 url: https://fooauto.github.io/
+subscribe: False
 
 plugins:
   - jekyll-seo-tag
