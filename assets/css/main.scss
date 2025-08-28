@@ -90,3 +90,18 @@
         /* 将两栏布局变为单栏堆叠 */
     }
 }
+
+.project-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 1rem; /* Space between images */
+  margin-top: 1rem;
+}
+
+.project-images-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  object-fit: cover; /* Ensures images fill their space nicely */
+}
