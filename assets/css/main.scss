@@ -12,7 +12,7 @@
 }
 
 .project-entry-media {
-  flex: 0 0 320px;
+  flex: 0 0 40%;
   height: fit-content;
 }
 
@@ -25,9 +25,8 @@
 }
 
 .project-entry-details {
-  flex: 1;
+  flex: 0 0 60%;
 }
-
 .project-entry-details h3 {
   margin-top: 0;
   margin-bottom: 0.25rem;
