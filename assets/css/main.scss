@@ -4,74 +4,75 @@
 
 .project-entry {
   display: flex;
-  flex-wrap: wrap; /* Allows items to stack */
-  border-bottom: 1px solid #eee;
-  padding: 2em 0;
+  flex-direction: row;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
 }
 
-/* Text details block */
-.project-entry-details {
-  width: 100%;
-  order: 1; /* Text appears first on mobile */
-}
-
-/* Media (video/image) block */
 .project-entry-media {
-  width: 100%;
-  order: 2; /* Media appears second on mobile */
-  margin-top: 1.5rem; /* Add space between text and media on mobile */
+  flex: 0 0 220px;
+  height: fit-content;
 }
 
 .project-entry-media img,
 .project-entry-media video {
-  max-width: 400px; /* Limit the max size of the media */
   width: 100%;
   height: auto;
-  display: block; /* Helps with margin and alignment */
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* A nice shadow effect */
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
 }
 
-/* --- Styles for wider screens (laptops, desktops) --- */
-@media (min-width: 768px) {
-  .project-entry {
-    flex-wrap: nowrap; /* Prevent stacking on wide screens */
-  }
-
-  /* On wide screens, text moves to the right */
-  .project-entry-details {
-    width: 60%;
-    order: 2; /* Text is now the second item */
-    padding-left: 2em; /* Add space between media and text */
-  }
-
-  /* On wide screens, media moves to the left */
-  .project-entry-media {
-    width: 40%;
-    order: 1; /* Media is now the first item */
-    margin-top: 0; /* Remove the top margin */
-  }
-
-  .project-entry-media img,
-  .project-entry-media video {
-    margin-left: 0; /* Align to the left */
-  }
+.project-entry-details {
+  flex: 1;
 }
 
-/* --- General styling for text inside the entry (unchanged) --- */
 .project-entry-details h3 {
   margin-top: 0;
-  font-size: 1.4em;
+  margin-bottom: 0.25rem;
+  font-size: 1.2em;
 }
+
+.project-entry-details h3 a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2a2a2a;
+}
+.project-entry-details h3 a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
 .project-meta {
-  font-size: 0.9em;
+  font-size: 0.85em;
+  margin-bottom: 0.75rem;
   color: #555;
-  margin-bottom: 1rem;
 }
+.project-meta span {
+    margin-right: 1.5rem;
+}
+
 .project-entry-details ul {
   margin-left: 1.2rem;
-  font-size: 0.95em;
+  padding-left: 0;
+  font-size: 0.85em;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.project-button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .project-entry {
+    flex-direction: column;
+  }
+  .project-entry-media {
+    flex-basis: auto;
+    max-width: 350px;
+    margin-bottom: 1rem;
+  }
 }
